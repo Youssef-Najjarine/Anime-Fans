@@ -10,6 +10,7 @@ document.addEventListener('click', handleClicks);
 function handleClicks(event) {
   const buttonPressed = event.target.className;
   if (buttonPressed === houseIcon.className) {
+    animeTriviaViewParagraph.textContent = '';
     h1.textContent = 'Anime Fans';
     homeScreen.classList.remove('hidden');
     animeTriviaView.classList.add('hidden');
