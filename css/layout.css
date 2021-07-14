@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: rgb(255, 136, 0);
+}
+
+.row {
+  display: flex;
+}
+
+.hidden {
+  display: none;
+}

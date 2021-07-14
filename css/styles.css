@@ -1,0 +1,81 @@
+.logo {
+  width: 100px;
+  border-radius: 50%;
+  margin: 10px 0 0 10px;
+}
+
+h1 {
+  font-size: 50px;
+  color: white;
+  font-family: 'Pacifico', cursive;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+
+h2 {
+  padding: 10px 0;
+  font-family: 'Courgette', cursive;
+  font-size: 25px;
+  text-align: center;
+  color: white;
+  background-color: blue;
+  border-radius: 20px;
+  max-width: 59%;
+}
+
+.animeTriviaButton {
+  font-size: 50px;
+  cursor: pointer;
+  color: #20bf6b;
+  text-transform: uppercase;
+  background: #fff;
+  padding: 40px;
+  border: 4px solid #20bf6b;
+  border-radius: 6px;
+  transition: all 0.3s ease 0s;
+}
+
+.animeTriviaButton:hover {
+  cursor: pointer;
+  color: #494949;
+  border-radius: 50px;
+  border-color: #494949;
+  transition: all 0.3s ease 0s;
+}
+
+.homeScreen {
+  text-align: center;
+  margin: 400px 0;
+}
+
+.animeTriviaView {
+  margin: 50px 0 100px 50px;
+}
+
+.animeTriviaView p {
+  color: white;
+  font-family: 'Merienda', cursive;
+  background-color: purple;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 25px;
+  max-width: 90%;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+}
+
+footer button {
+  background-color: white;
+  border-color: white;
+}
+
+.houseIcon,
+.heartIcon {
+  cursor: pointer;
+  width: 100px;
+}
