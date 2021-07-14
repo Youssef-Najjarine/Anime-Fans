@@ -4,16 +4,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AJAX Project</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merienda&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Merienda&display=swap" rel="stylesheet">
   <link rel="icon" href="images/favicon.ico">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <header>
+  <section class="container">
+  <header class="row">
+    <img src="images/Ajax logo.jpg" class="logo"/>
+    <h1>Anime Fans</h1>
   </header>
   <main>
+    <section class="homeScreen">
+    <button class="animeTriviaButton">Anime Trivia</button>
+    </section>
+    <section class="animeTriviaView hidden">
+      <h2>Can you guess who or where this quote is from?</h2>
+      <p></p>
+    </section>
   </main>
+  <footer>
+    <button><img src="images/homeIcon.webp" class="houseIcon"/></button>
+    <button><img src="images/heart.png" class="heartIcon"/></button>
+  </footer>
+  </section>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
 </body>
