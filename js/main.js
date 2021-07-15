@@ -9,12 +9,9 @@ const animeName = document.querySelector('#animeName');
 const animeCharacter = document.querySelector('#animeCharacter');
 const correctAnime = document.querySelector('.correctAnime');
 const correctCharacter = document.querySelector('.correctCharacter');
-const correctAnime2 = document.querySelector('.correctAnime2');
-const correctCharacter2 = document.querySelector('.correctCharacter2');
-const correctAnswerModal = document.querySelector('.correctAnswerModal');
-const inCorrectAnswerModal = document.querySelector('.inCorrectAnswerModal');
-const next1 = document.querySelector('.next1');
-const next2 = document.querySelector('.next2');
+const modal = document.querySelector('.blackBox');
+const modalTitle = document.querySelector('.blackBox h3');
+const next = document.querySelector('.next');
 
 document.addEventListener('click', handleClicks);
 
@@ -32,7 +29,7 @@ function handleClicks(event) {
     homeScreen.classList.add('hidden');
   } else if (buttonPressed === animeTriviaSubmit.className) {
     handleAnimeTriviaSubmit();
-  } else if (buttonPressed === next1.className || buttonPressed === next2.className) {
+  } else if (buttonPressed === next.className) {
     handleNextButton();
   }
 }
@@ -48,25 +45,29 @@ function handleApi() {
     animeTriviaViewParagraph.textContent = xhr.response.quote;
     correctAnime.textContent = xhr.response.anime;
     correctCharacter.textContent = xhr.response.character;
-    correctAnime2.textContent = xhr.response.anime;
-    correctCharacter2.textContent = xhr.response.character;
+
   }
   xhr.send();
 }
 
 function handleAnimeTriviaSubmit() {
   if (animeName.value.toLowerCase() === correctAnime.textContent.toLowerCase() || animeCharacter.value.toLowerCase() === correctCharacter.textContent.toLowerCase()) {
-    correctAnswerModal.classList.remove('hidden');
+    modal.classList.remove('hidden');
+    modalTitle.textContent = 'Correct!';
+    modalTitle.classList.add('correct');
+
   } else {
-    inCorrectAnswerModal.classList.remove('hidden');
+    modal.classList.remove('hidden');
+    modalTitle.textContent = 'inCorrect!';
+    modalTitle.classList.remove('correct');
+    modalTitle.classList.add('incorrect');
   }
 
 }
 
 function handleNextButton() {
   handleApi();
-  correctAnswerModal.classList.add('hidden');
-  inCorrectAnswerModal.classList.add('hidden');
+  modal.classList.add('hidden');
   animeCharacter.value = '';
   animeName.value = '';
 }

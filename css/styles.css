@@ -30,6 +30,14 @@ h3 {
   font-size: 50px;
 }
 
+.blackBox h3.correct {
+  color: green;
+}
+
+.blackBox h3.incorrect {
+  color: red;
+}
+
 h4 {
   font-family: 'Courgette', cursive;
   font-size: 20px;
@@ -154,12 +162,4 @@ footer button {
   background-color: red;
   width: 100px;
   height: 50px;
-}
-
-.correctAnswerModal h3 {
-  color: green;
-}
-
-.inCorrectAnswerModal h3 {
-  color: red;
 }
