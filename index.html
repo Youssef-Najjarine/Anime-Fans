@@ -31,7 +31,25 @@
     <section class="animeTriviaView hidden">
       <h2>Can you guess who or where this quote is from?</h2>
       <p></p>
+      <div>
+        <input type="text" name="animeName" id="animeName" placeholder="Guess the Anime">
+        <h3>Or</h3>
+        <input type="text" name="animeCharacter" id="animeCharacter" placeholder="Guess the Character">
+      </div>
+      <div>
+      <button class="animeTriviaSubmit">submit</button>
+      </div>
     </section>
+    <div class="blackBox hidden">
+    <div class="whiteBox">
+      <h3>Correct!</h3>
+      <h4>Correct Anime:</h4>
+      <p class="correctAnime"></p>
+      <h4>Correct Character:</h4>
+      <p class="correctCharacter"></p>
+      <button class="next">Next</button>
+    </div>
+    </div>
   </main>
   <footer>
     <button><img src="images/homeIcon.webp" class="houseIcon"/></button>
