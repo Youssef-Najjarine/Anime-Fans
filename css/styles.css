@@ -24,6 +24,29 @@ h2 {
   max-width: 59%;
 }
 
+h3 {
+  margin: 0;
+  font-family: 'Courgette', cursive;
+  font-size: 50px;
+}
+
+h4 {
+  font-family: 'Courgette', cursive;
+  font-size: 20px;
+}
+
+.animeTriviaView div {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.animeTriviaView div input {
+  border-radius: 10px;
+  font-size: 30px;
+  height: 50px;
+  width: 400px;
+}
+
 .animeTriviaButton {
   font-size: 50px;
   cursor: pointer;
@@ -42,6 +65,18 @@ h2 {
   border-radius: 50px;
   border-color: #494949;
   transition: all 0.3s ease 0s;
+}
+
+.animeTriviaSubmit {
+  font-family: 'Merienda', cursive;
+  text-transform: uppercase;
+  font-size: 30px;
+  cursor: pointer;
+  width: 160px;
+  height: 80px;
+  background: greenyellow;
+  border-radius: 50%;
+  text-align: center;
 }
 
 .homeScreen {
@@ -78,4 +113,53 @@ footer button {
 .heartIcon {
   cursor: pointer;
   width: 100px;
+}
+
+.blackBox {
+  display: flex;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  align-items: center;
+  justify-content: center;
+}
+
+.blackBox h4,
+.blackBox p {
+  text-align: left;
+}
+
+.blackBox p {
+  font-size: 20px;
+}
+
+.whiteBox {
+  background-color: white;
+
+  /* height: 300px;
+  width: 320px; */
+  padding: 60px 220px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.whiteBox button {
+  cursor: pointer;
+  font-size: 30px;
+  border-radius: 20px;
+  color: white;
+  background-color: red;
+  width: 100px;
+  height: 50px;
+}
+
+.correctAnswerModal h3 {
+  color: green;
+}
+
+.inCorrectAnswerModal h3 {
+  color: red;
 }
