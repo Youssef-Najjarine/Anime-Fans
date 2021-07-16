@@ -10,8 +10,12 @@ const animeCharacter = document.querySelector('#animeCharacter');
 const correctAnime = document.querySelector('.correctAnime');
 const correctCharacter = document.querySelector('.correctCharacter');
 const modal = document.querySelector('.blackBox');
-const modalTitle = document.querySelector('.blackBox h3');
+const modalTitle = document.querySelector('.h3');
 const next = document.querySelector('.next');
+const favoriteButton = document.querySelector('.favoriteHeart');
+const ul = document.querySelector('ul');
+const myFavorites = document.querySelector('.myFavorites');
+const heartIcon = document.querySelector('.heartIcon');
 
 document.addEventListener('click', handleClicks);
 
@@ -22,6 +26,7 @@ function handleClicks(event) {
     h1.textContent = 'Anime Fans';
     homeScreen.classList.remove('hidden');
     animeTriviaView.classList.add('hidden');
+    myFavorites.classList.add('hidden');
   } else if (buttonPressed === animeTriviaButton.className) {
     handleApi();
     h1.textContent = 'Anime Trivia';
@@ -31,6 +36,13 @@ function handleClicks(event) {
     handleAnimeTriviaSubmit();
   } else if (buttonPressed === next.className) {
     handleNextButton();
+  } else if (buttonPressed === favoriteButton.className) {
+    handleFavoriteButton();
+  } else if (buttonPressed === heartIcon.className) {
+    h1.textContent = 'My Favorites';
+    homeScreen.classList.add('hidden');
+    animeTriviaView.classList.add('hidden');
+    myFavorites.classList.remove('hidden');
   }
 }
 
@@ -61,6 +73,7 @@ function handleAnimeTriviaSubmit() {
     modalTitle.textContent = 'inCorrect!';
     modalTitle.classList.remove('correct');
     modalTitle.classList.add('incorrect');
+
   }
 
 }
@@ -70,4 +83,15 @@ function handleNextButton() {
   modal.classList.add('hidden');
   animeCharacter.value = '';
   animeName.value = '';
+}
+
+function handleFavoriteButton() {
+  h1.textContent = 'My Favorites';
+  const li = document.createElement('li');
+  li.textContent = correctAnime.textContent;
+  ul.appendChild(li);
+  modal.classList.add('hidden');
+  homeScreen.classList.add('hidden');
+  animeTriviaView.classList.add('hidden');
+  myFavorites.classList.remove('hidden');
 }

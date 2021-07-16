@@ -30,11 +30,38 @@ h3 {
   font-size: 50px;
 }
 
-.blackBox h3.correct {
+.favorite {
+  max-width: 300px;
+  position: absolute;
+  top: 530px;
+  bottom: 0;
+  left: 1050px;
+  right: 0;
+}
+
+.favoriteHeart {
+  cursor: pointer;
+  width: 120px;
+}
+
+footer button {
+  background-color: white;
+  border-color: white;
+}
+
+.favorite button {
+  background: transparent;
+  color: #0a6;
+  border-color: white;
+  border-style: solid;
+  border-radius: 50%;
+}
+
+.h3.correct {
   color: green;
 }
 
-.blackBox h3.incorrect {
+.h3.incorrect {
   color: red;
 }
 
@@ -112,11 +139,6 @@ footer {
   background-color: white;
 }
 
-footer button {
-  background-color: white;
-  border-color: white;
-}
-
 .houseIcon,
 .heartIcon {
   cursor: pointer;
@@ -146,15 +168,12 @@ footer button {
 
 .whiteBox {
   background-color: white;
-
-  /* height: 300px;
-  width: 320px; */
   padding: 60px 220px;
   border-radius: 15px;
   text-align: center;
 }
 
-.whiteBox button {
+.next {
   cursor: pointer;
   font-size: 30px;
   border-radius: 20px;
@@ -162,4 +181,17 @@ footer button {
   background-color: red;
   width: 100px;
   height: 50px;
+}
+
+ul {
+  max-width: 800px;
+  margin: 0 auto;
+  column-count: 2;
+}
+
+li {
+  margin: 20px 10px;
+  font-size: 30px;
+  list-style-type: none;
+  font-family: 'Courgette', cursive;
 }
