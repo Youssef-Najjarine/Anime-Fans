@@ -102,6 +102,30 @@ h4 {
   transition: all 0.3s ease 0s;
 }
 
+.reviewAnimesDiv {
+  margin-top: 50px;
+}
+
+.reviewAnimes {
+  font-size: 42px;
+  cursor: pointer;
+  color: #3020bf;
+  text-transform: uppercase;
+  background: #fff;
+  padding: 40px;
+  border: 4px solid #3020bf;
+  border-radius: 6px;
+  transition: all 0.3s ease 0s;
+}
+
+.reviewAnimes:hover {
+  cursor: pointer;
+  color: red;
+  border-radius: 50px;
+  border-color: red;
+  transition: all 0.3s ease 0s;
+}
+
 .animeTriviaSubmit {
   font-family: 'Merienda', cursive;
   text-transform: uppercase;
@@ -183,13 +207,25 @@ footer {
   height: 50px;
 }
 
-ul {
+.myFavoritesUl {
   max-width: 800px;
   margin: 0 auto;
   column-count: 2;
 }
 
-li {
+.myFavoritesUl li {
+  margin: 20px 10px;
+  font-size: 30px;
+  list-style-type: none;
+  font-family: 'Courgette', cursive;
+}
+
+.reviewsUl {
+  margin: 0 auto;
+  column-count: 3;
+}
+
+.reviewsUl li {
   margin: 20px 10px;
   font-size: 30px;
   list-style-type: none;
