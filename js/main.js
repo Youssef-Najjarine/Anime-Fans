@@ -38,6 +38,8 @@ function handleClicks(event) {
     handleHeartIcon();
   } else if (buttonPressed === reviewAnimesButton.className) {
     handleReviewAnimesButton();
+  } else if (buttonPressed === event.target.closest('a').className) {
+    handleStars();
   }
 }
 
@@ -112,7 +114,7 @@ function handleReviewAnimesButton() {
   homeScreen.classList.add('hidden');
   animeTriviaView.classList.add('hidden');
   myFavorites.classList.add('hidden');
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 11; i++) {
     handleReviewsApi();
   }
 }
@@ -125,8 +127,34 @@ function handleReviewsApi() {
     // console.log(xhr.status);
     // console.log(xhr.response);
     const li = document.createElement('li');
+    const div = document.createElement('div');
+    const a1 = document.createElement('a');
+    const a2 = document.createElement('a');
+    const a3 = document.createElement('a');
+    const a4 = document.createElement('a');
+    const a5 = document.createElement('a');
     li.textContent = xhr.response.anime;
+    li.appendChild(div);
+    div.setAttribute('class', 'starSection');
+    div.appendChild(a1);
+    div.appendChild(a2);
+    div.appendChild(a3);
+    div.appendChild(a4);
+    div.appendChild(a5);
+    a1.setAttribute('class', 'fa fa-star');
+    a2.setAttribute('class', 'fa fa-star');
+    a3.setAttribute('class', 'fa fa-star');
+    a4.setAttribute('class', 'fa fa-star');
+    a5.setAttribute('class', 'fa fa-star');
     reviewsUl.appendChild(li);
   }
   xhr.send();
+}
+
+function handleStars() {
+  if (event.target.className === 'fa fa-star checked') {
+    event.target.classList.remove('checked');
+  } else {
+    event.target.classList.add('checked');
+  }
 }

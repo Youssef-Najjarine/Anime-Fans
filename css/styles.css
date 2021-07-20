@@ -208,7 +208,6 @@ footer {
 }
 
 .myFavoritesUl {
-  max-width: 800px;
   margin: 0 auto;
   column-count: 2;
 }
@@ -226,8 +225,28 @@ footer {
 }
 
 .reviewsUl li {
+  border-radius: 10px;
+  background-color: grey;
+  color: white;
   margin: 20px 10px;
   font-size: 30px;
   list-style-type: none;
   font-family: 'Courgette', cursive;
+  -webkit-column-break-inside: avoid;
+}
+
+.fa {
+  color: black;
+  transition: transform 0.2s;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.fa:hover {
+  transform: scale(1.5);
+  color: orange;
+}
+
+.checked {
+  color: orange;
 }
