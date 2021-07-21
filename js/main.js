@@ -28,6 +28,8 @@ function handleClicks(event) {
     handleHouseIcon();
   } else if (buttonPressed === animeTriviaButton.className) {
     handleAnimeTriviaButton();
+  } else if (buttonPressed === reviewAnimesButton.className) {
+    handleReviewAnimesButton();
   } else if (buttonPressed === animeTriviaSubmit.className) {
     handleAnimeTriviaSubmit();
   } else if (buttonPressed === next.className) {
@@ -36,10 +38,12 @@ function handleClicks(event) {
     handleFavoriteButton();
   } else if (buttonPressed === heartIcon.className) {
     handleHeartIcon();
-  } else if (buttonPressed === reviewAnimesButton.className) {
-    handleReviewAnimesButton();
-  } else if (buttonPressed === event.target.closest('a').className) {
+  } else if (buttonPressed === 'reviewsSubmit') {
+    handleReviewsSubmit();
+  } else if (buttonPressed === 'fa fa-star') {
     handleStars();
+  } else if (buttonPressed === 'reviewsHeart') {
+    handleReviewsFavoriteButtons();
   }
 }
 
@@ -118,6 +122,7 @@ function handleReviewAnimesButton() {
     handleReviewsApi();
   }
 }
+
 function handleReviewsApi() {
   const xhr = new XMLHttpRequest();
   xhr.open('GET', 'https://animechan.vercel.app/api/random');
@@ -127,26 +132,45 @@ function handleReviewsApi() {
     // console.log(xhr.status);
     // console.log(xhr.response);
     const li = document.createElement('li');
-    const div = document.createElement('div');
+    const div1 = document.createElement('div');
+    const div2 = document.createElement('div');
+    const div3 = document.createElement('div');
+    const textArea = document.createElement('textarea');
+    const button1 = document.createElement('button');
+    const button2 = document.createElement('button');
+    const img = document.createElement('img');
     const a1 = document.createElement('a');
     const a2 = document.createElement('a');
     const a3 = document.createElement('a');
     const a4 = document.createElement('a');
     const a5 = document.createElement('a');
+    li.setAttribute('class', xhr.response.anime);
+    reviewsUl.appendChild(li);
     li.textContent = xhr.response.anime;
-    li.appendChild(div);
-    div.setAttribute('class', 'starSection');
-    div.appendChild(a1);
-    div.appendChild(a2);
-    div.appendChild(a3);
-    div.appendChild(a4);
-    div.appendChild(a5);
+    li.appendChild(div1);
+    div1.setAttribute('class', 'row');
+    div1.appendChild(div2);
+    div2.setAttribute('class', 'reviewsFirstDiv');
+    div2.appendChild(a1);
+    div2.appendChild(a2);
+    div2.appendChild(a3);
+    div2.appendChild(a4);
+    div2.appendChild(a5);
+    div2.appendChild(textArea);
+    div1.appendChild(div3);
+    div3.appendChild(button1);
+    button1.setAttribute('class', 'reviewsHeartButton');
+    button1.appendChild(img);
+    img.setAttribute('src', 'images/heart.png');
+    img.setAttribute('class', 'reviewsHeart');
+    div3.appendChild(button2);
+    button2.setAttribute('class', 'reviewsSubmit');
+    button2.textContent = 'Submit';
     a1.setAttribute('class', 'fa fa-star');
     a2.setAttribute('class', 'fa fa-star');
     a3.setAttribute('class', 'fa fa-star');
     a4.setAttribute('class', 'fa fa-star');
     a5.setAttribute('class', 'fa fa-star');
-    reviewsUl.appendChild(li);
   }
   xhr.send();
 }
@@ -157,4 +181,22 @@ function handleStars() {
   } else {
     event.target.classList.add('checked');
   }
+}
+
+function handleReviewsFavoriteButtons() {
+  h1.textContent = 'My Favorites';
+  const li = document.createElement('li');
+  li.textContent = event.target.closest('li').className;
+  myFavoritesUl.appendChild(li);
+  modal.classList.add('hidden');
+  homeScreen.classList.add('hidden');
+  animeTriviaView.classList.add('hidden');
+  myFavorites.classList.remove('hidden');
+  reviewAnimesSection.classList.add('hidden');
+}
+
+function handleReviewsSubmit() {
+  const li = event.target.closest('li');
+  li.remove();
+  handleReviewsApi();
 }

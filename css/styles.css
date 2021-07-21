@@ -30,6 +30,10 @@ h3 {
   font-size: 50px;
 }
 
+h5 {
+  margin: 0;
+}
+
 .favorite {
   max-width: 300px;
   position: absolute;
@@ -222,6 +226,7 @@ footer {
 .reviewsUl {
   margin: 0 auto;
   column-count: 3;
+  margin-bottom: 100px;
 }
 
 .reviewsUl li {
@@ -233,6 +238,36 @@ footer {
   list-style-type: none;
   font-family: 'Courgette', cursive;
   -webkit-column-break-inside: avoid;
+}
+
+.reviewsFirstDiv {
+  max-width: 200px;
+}
+
+.reviewsHeartButton {
+  cursor: pointer;
+  margin-left: 20px;
+  border-radius: 50%;
+}
+
+.reviewsHeart {
+  width: 40px;
+}
+
+.reviewsUl textarea {
+  font-size: 20px;
+  width: 180px;
+  height: 70px;
+}
+
+.reviewsSubmit {
+  cursor: pointer;
+  margin-top: 20px;
+  margin-left: 5px;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 10px;
+  background-color: rgb(31, 82, 129);
 }
 
 .fa {
