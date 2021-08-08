@@ -45,6 +45,7 @@ function handleClicks(event) {
   } else if (buttonPressed === 'reviewsHeart') {
     handleReviewsFavoriteButtons();
   }
+
 }
 
 function handleApi() {
