@@ -34,6 +34,33 @@ h5 {
   margin: 0;
 }
 
+/* <=======modal=====> */
+.modalBlackBox {
+  display: flex;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  align-items: center;
+  justify-content: center;
+}
+
+.modalWhiteBox {
+  background-color: white;
+  padding: 40px 120px;
+  border-radius: 15px;
+}
+
+.modalH2 {
+  font-size: 100px;
+  color: blue;
+  background-color: white;
+}
+
+/* <======modal======> */
+
 .favorite {
   max-width: 300px;
   position: absolute;
