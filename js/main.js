@@ -19,6 +19,7 @@ const heartIcon = document.querySelector('.heartIcon');
 const reviewAnimesButton = document.querySelector('.reviewAnimes');
 const reviewsUl = document.querySelector('.reviewsUl');
 const reviewAnimesSection = document.querySelector('.reviewAnimesSection');
+const loadingModal = document.querySelector('.modal');
 
 document.addEventListener('click', handleClicks);
 
@@ -49,25 +50,34 @@ function handleClicks(event) {
 }
 
 function handleApi() {
-  const xhr = new XMLHttpRequest();
-  xhr.open('GET', 'https://animechan.vercel.app/api/random');
-  xhr.responseType = 'json';
-  xhr.addEventListener('load', handleXhr);
-  function handleXhr() {
-    // console.log(xhr.status);
-    // console.log(xhr.response);
-    animeTriviaViewParagraph.textContent = xhr.response.quote;
-    correctAnime.textContent = xhr.response.anime;
-    correctCharacter.textContent = xhr.response.character;
-  }
-  xhr.send();
+  const promise = new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', 'https://animechan.vercel.app/api/random');
+    xhr.responseType = 'json';
+    xhr.addEventListener('load', handleXhr);
+    function handleXhr() {
+      // console.log(xhr.status);
+      // console.log(xhr.response);
+      animeTriviaViewParagraph.textContent = xhr.response.quote;
+      correctAnime.textContent = xhr.response.anime;
+      correctCharacter.textContent = xhr.response.character;
+      resolve();
+    }
+    xhr.send();
+  });
+  return promise;
 }
 
 function handleAnimeTriviaButton() {
-  handleApi();
-  h1.textContent = 'Anime Trivia';
-  animeTriviaView.classList.remove('hidden');
-  homeScreen.classList.add('hidden');
+  const newArray = [];
+  loadingModal.classList.remove('hidden');
+  newArray.push(handleApi());
+  Promise.all(newArray).then(values => {
+    h1.textContent = 'Anime Trivia';
+    animeTriviaView.classList.remove('hidden');
+    homeScreen.classList.add('hidden');
+    loadingModal.classList.add('hidden');
+  });
 }
 
 function handleAnimeTriviaSubmit() {
@@ -86,6 +96,8 @@ function handleAnimeTriviaSubmit() {
 function handleHouseIcon() {
   animeTriviaViewParagraph.textContent = '';
   reviewsUl.innerHTML = '';
+  animeName.value = '';
+  animeCharacter.value = '';
   h1.textContent = 'Anime Fans';
   homeScreen.classList.remove('hidden');
   animeTriviaView.classList.add('hidden');
@@ -114,66 +126,77 @@ function handleHeartIcon() {
   myFavorites.classList.remove('hidden');
 }
 function handleReviewAnimesButton() {
-  h1.textContent = 'Review Animes';
-  reviewAnimesSection.classList.remove('hidden');
-  homeScreen.classList.add('hidden');
-  animeTriviaView.classList.add('hidden');
-  myFavorites.classList.add('hidden');
+  const newArray = [];
+  loadingModal.classList.remove('hidden');
   for (let i = 0; i < 11; i++) {
-    handleReviewsApi();
+    newArray.push(handleReviewsApi());
   }
+
+  Promise.all(newArray).then(values => {
+    h1.textContent = 'Review Animes';
+    reviewAnimesSection.classList.remove('hidden');
+    homeScreen.classList.add('hidden');
+    animeTriviaView.classList.add('hidden');
+    myFavorites.classList.add('hidden');
+    loadingModal.classList.add('hidden');
+  });
+
 }
 
 function handleReviewsApi() {
-  const xhr = new XMLHttpRequest();
-  xhr.open('GET', 'https://animechan.vercel.app/api/random');
-  xhr.responseType = 'json';
-  xhr.addEventListener('load', handleXhr);
-  function handleXhr() {
-    // console.log(xhr.status);
-    // console.log(xhr.response);
-    const li = document.createElement('li');
-    const div1 = document.createElement('div');
-    const div2 = document.createElement('div');
-    const div3 = document.createElement('div');
-    const textArea = document.createElement('textarea');
-    const button1 = document.createElement('button');
-    const button2 = document.createElement('button');
-    const img = document.createElement('img');
-    const a1 = document.createElement('a');
-    const a2 = document.createElement('a');
-    const a3 = document.createElement('a');
-    const a4 = document.createElement('a');
-    const a5 = document.createElement('a');
-    li.setAttribute('class', xhr.response.anime);
-    reviewsUl.appendChild(li);
-    li.textContent = xhr.response.anime;
-    li.appendChild(div1);
-    div1.setAttribute('class', 'row');
-    div1.appendChild(div2);
-    div2.setAttribute('class', 'reviewsFirstDiv');
-    div2.appendChild(a1);
-    div2.appendChild(a2);
-    div2.appendChild(a3);
-    div2.appendChild(a4);
-    div2.appendChild(a5);
-    div2.appendChild(textArea);
-    div1.appendChild(div3);
-    div3.appendChild(button1);
-    button1.setAttribute('class', 'reviewsHeartButton');
-    button1.appendChild(img);
-    img.setAttribute('src', 'images/heart.png');
-    img.setAttribute('class', 'reviewsHeart');
-    div3.appendChild(button2);
-    button2.setAttribute('class', 'reviewsSubmit');
-    button2.textContent = 'Submit';
-    a1.setAttribute('class', 'fa fa-star');
-    a2.setAttribute('class', 'fa fa-star');
-    a3.setAttribute('class', 'fa fa-star');
-    a4.setAttribute('class', 'fa fa-star');
-    a5.setAttribute('class', 'fa fa-star');
-  }
-  xhr.send();
+  const promise = new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', 'https://animechan.vercel.app/api/random');
+    xhr.responseType = 'json';
+    xhr.addEventListener('load', handleXhr);
+    function handleXhr() {
+      // console.log(xhr.status);
+      // console.log(xhr.response);
+      const li = document.createElement('li');
+      const div1 = document.createElement('div');
+      const div2 = document.createElement('div');
+      const div3 = document.createElement('div');
+      const textArea = document.createElement('textarea');
+      const button1 = document.createElement('button');
+      const button2 = document.createElement('button');
+      const img = document.createElement('img');
+      const a1 = document.createElement('a');
+      const a2 = document.createElement('a');
+      const a3 = document.createElement('a');
+      const a4 = document.createElement('a');
+      const a5 = document.createElement('a');
+      li.setAttribute('class', xhr.response.anime);
+      reviewsUl.appendChild(li);
+      li.textContent = xhr.response.anime;
+      li.appendChild(div1);
+      div1.setAttribute('class', 'row');
+      div1.appendChild(div2);
+      div2.setAttribute('class', 'reviewsFirstDiv');
+      div2.appendChild(a1);
+      div2.appendChild(a2);
+      div2.appendChild(a3);
+      div2.appendChild(a4);
+      div2.appendChild(a5);
+      div2.appendChild(textArea);
+      div1.appendChild(div3);
+      div3.appendChild(button1);
+      button1.setAttribute('class', 'reviewsHeartButton');
+      button1.appendChild(img);
+      img.setAttribute('src', 'images/heart.png');
+      img.setAttribute('class', 'reviewsHeart');
+      div3.appendChild(button2);
+      button2.setAttribute('class', 'reviewsSubmit');
+      button2.textContent = 'Submit';
+      a1.setAttribute('class', 'fa fa-star');
+      a2.setAttribute('class', 'fa fa-star');
+      a3.setAttribute('class', 'fa fa-star');
+      a4.setAttribute('class', 'fa fa-star');
+      a5.setAttribute('class', 'fa fa-star');
+      resolve();
+    }
+    xhr.send();
+  });
+  return promise;
 }
 
 function handleStars() {
