@@ -237,7 +237,6 @@ function handleReviewsFavoriteButtons() {
   myFavorites.classList.remove('hidden');
   reviewAnimesSection.classList.add('hidden');
 }
-
 function handleReviewsSubmit() {
   const li = event.target.closest('li');
   li.remove();
