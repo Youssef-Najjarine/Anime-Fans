@@ -193,6 +193,14 @@ footer {
   background-color: white;
 }
 
+footer h6 {
+  font-family: 'Courgette', cursive;
+  text-align: center;
+  font-size: 17px;
+  background-color: rgb(255, 136, 0) !important;
+  margin: 0;
+}
+
 .houseIcon,
 .heartIcon {
   width: 100px;
