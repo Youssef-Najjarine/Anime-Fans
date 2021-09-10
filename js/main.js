@@ -110,6 +110,13 @@ function handleNextButton() {
   animeName.value = '';
 }
 function handleFavoriteButton() {
+  var items = myFavoritesUl.getElementsByTagName('li');
+
+  for (var i = 0; i < items.length; i++) {
+    if (items[i].textContent === 'You have no favorite animes!') {
+      myFavoritesUl.removeChild(myFavoritesUl.childNodes[0]);
+    }
+  }
   h1.textContent = 'My Favorites';
   const li = document.createElement('li');
   li.textContent = correctAnime.textContent;
@@ -120,6 +127,11 @@ function handleFavoriteButton() {
   myFavorites.classList.remove('hidden');
 }
 function handleHeartIcon() {
+  if (myFavoritesUl.getElementsByTagName('li').length === 0) {
+    const li = document.createElement('li');
+    li.textContent = 'You have no favorite animes!';
+    myFavoritesUl.appendChild(li);
+  }
   h1.textContent = 'My Favorites';
   homeScreen.classList.add('hidden');
   animeTriviaView.classList.add('hidden');
@@ -208,6 +220,13 @@ function handleStars() {
 }
 
 function handleReviewsFavoriteButtons() {
+  var items = myFavoritesUl.getElementsByTagName('li');
+
+  for (var i = 0; i < items.length; i++) {
+    if (items[i].textContent === 'You have no favorite animes!') {
+      myFavoritesUl.removeChild(myFavoritesUl.childNodes[0]);
+    }
+  }
   h1.textContent = 'My Favorites';
   const li = document.createElement('li');
   li.textContent = event.target.closest('li').className;
