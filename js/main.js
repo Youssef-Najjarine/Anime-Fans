@@ -48,7 +48,6 @@ function handleClicks(event) {
   }
 
 }
-
 function handleApi() {
   const promise = new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
@@ -67,7 +66,6 @@ function handleApi() {
   });
   return promise;
 }
-
 function handleAnimeTriviaButton() {
   const newArray = [];
   loadingModal.classList.remove('hidden');
@@ -79,7 +77,6 @@ function handleAnimeTriviaButton() {
     loadingModal.classList.add('hidden');
   });
 }
-
 function handleAnimeTriviaSubmit() {
   if (animeName.value.toLowerCase() === correctAnime.textContent.toLowerCase() || animeCharacter.value.toLowerCase() === correctCharacter.textContent.toLowerCase()) {
     modal.classList.remove('hidden');
@@ -92,7 +89,6 @@ function handleAnimeTriviaSubmit() {
     modalTitle.classList.add('incorrect');
   }
 }
-
 function handleHouseIcon() {
   animeTriviaViewParagraph.textContent = '';
   reviewsUl.innerHTML = '';
@@ -131,7 +127,6 @@ function handleReviewAnimesButton() {
   for (let i = 0; i < 11; i++) {
     newArray.push(handleReviewsApi());
   }
-
   Promise.all(newArray).then(values => {
     h1.textContent = 'Review Animes';
     reviewAnimesSection.classList.remove('hidden');
@@ -140,9 +135,7 @@ function handleReviewAnimesButton() {
     myFavorites.classList.add('hidden');
     loadingModal.classList.add('hidden');
   });
-
 }
-
 function handleReviewsApi() {
   const promise = new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
@@ -198,7 +191,6 @@ function handleReviewsApi() {
   });
   return promise;
 }
-
 function handleStars() {
   if (event.target.className === 'fa fa-star checked') {
     event.target.classList.remove('checked');
@@ -206,7 +198,6 @@ function handleStars() {
     event.target.classList.add('checked');
   }
 }
-
 function handleReviewsFavoriteButtons() {
   h1.textContent = 'My Favorites';
   const li = document.createElement('li');
@@ -218,7 +209,6 @@ function handleReviewsFavoriteButtons() {
   myFavorites.classList.remove('hidden');
   reviewAnimesSection.classList.add('hidden');
 }
-
 function handleReviewsSubmit() {
   const li = event.target.closest('li');
   li.remove();

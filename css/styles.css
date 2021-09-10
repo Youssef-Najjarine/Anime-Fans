@@ -35,6 +35,7 @@ h5 {
 }
 
 /* <=======modal=====> */
+
 .modalBlackBox {
   display: flex;
   position: fixed;
@@ -60,7 +61,6 @@ h5 {
 }
 
 /* <======modal======> */
-
 .favorite {
   max-width: 300px;
   position: absolute;
