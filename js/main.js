@@ -98,6 +98,7 @@ function handleHouseIcon() {
   homeScreen.classList.remove('hidden');
   animeTriviaView.classList.add('hidden');
   myFavorites.classList.add('hidden');
+  reviewAnimesSection.classList.add('hidden');
 }
 function handleNextButton() {
   handleApi();
@@ -131,6 +132,7 @@ function handleHeartIcon() {
   h1.textContent = 'My Favorites';
   homeScreen.classList.add('hidden');
   animeTriviaView.classList.add('hidden');
+  reviewAnimesSection.classList.add('hidden');
   myFavorites.classList.remove('hidden');
 }
 function handleReviewAnimesButton() {
