@@ -55,8 +55,6 @@ function handleApi() {
     xhr.responseType = 'json';
     xhr.addEventListener('load', handleXhr);
     function handleXhr() {
-      // console.log(xhr.status);
-      // console.log(xhr.response);
       animeTriviaViewParagraph.textContent = xhr.response.quote;
       correctAnime.textContent = xhr.response.anime;
       correctCharacter.textContent = xhr.response.character;
@@ -157,8 +155,6 @@ function handleReviewsApi() {
     xhr.responseType = 'json';
     xhr.addEventListener('load', handleXhr);
     function handleXhr() {
-      // console.log(xhr.status);
-      // console.log(xhr.response);
       const li = document.createElement('li');
       const div1 = document.createElement('div');
       const div2 = document.createElement('div');
