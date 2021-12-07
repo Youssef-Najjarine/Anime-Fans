@@ -8,9 +8,12 @@ Here is a link to **Anime Fans**:
 
 [Anime Fans](https://youssef-najjarine.github.io/ajax-project/)
 
-For this particular project I decided to implement:
+**technologies used:**
+
 -Figma's wireframing tools to better plan for and organize the application before beginning the project.
+
 -Applied *CSS3* media queries to achieve an application that is more responsive towards mobile users.
+
 -Requesting data from a public API and implementing AJAX to display query results.
 
 **Features:**
