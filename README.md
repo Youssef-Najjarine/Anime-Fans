@@ -18,11 +18,9 @@ Here is a link to **Anime Fans**:
 
 **Features:**
 
--Random Trivia questions
-
--Review random Animes
-
--My Favorites page
+- Random Trivia questions
+- Review random Animes
+- My Favorites page
 
 
 
@@ -32,8 +30,6 @@ Here is a link to **Anime Fans**:
 
 **Stretch features:**
 
--Users can create a profile
-
--Users can edit reviewed animes and favorited animes
-
--Users can delete reviewed animes and favorited animes
+- Users can create a profile
+- Users can edit reviewed animes and favorited animes
+- Users can delete reviewed animes and favorited animes
