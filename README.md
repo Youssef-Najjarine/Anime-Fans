@@ -6,7 +6,7 @@ I built this project so users interested in the world of Anime could test or imp
 
 Here is a link to ## Anime Fans:
 
-<a hred="youssef-najjarine.github.io/ajax-project/">Anime Fans</a>
+(youssef-najjarine.github.io/ajax-project/ "Anime Fans")
 
 For this particular project I decided to implement:
 -Figma's wireframing tools to better plan for and organize the application before beginning the project.
