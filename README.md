@@ -6,7 +6,7 @@ I built this project so users interested in the world of Anime could test or imp
 
 Here is a link to **Anime Fans**:
 
-[Anime Fans](https://youssef-najjarine.github.io/ajax-project/)
+[Anime Fans](https://https://youssef-najjarine.github.io/Anime-Fans/)
 
 **technologies used:**
 
