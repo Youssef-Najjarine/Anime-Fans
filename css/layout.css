@@ -31,12 +31,12 @@ body {
     text-align: center;
   }
 
-  .animeTriviaButton {
-    font-size: 30px;
+  .animeTriviaView {
+    margin: 50px 0 0 0;
   }
 
-  .animeTriviaView div {
-    text-align: left;
+  .animeTriviaButton {
+    font-size: 30px;
   }
 
   .animeTriviaView div input {
