@@ -13,8 +13,11 @@ For this particular project I decided to implement:
 -Requesting data from a public API and implementing AJAX to display query results.
 
 Features:
+
 -Random Trivia questions
+
 -Review random Animes
+
 -My Favorites page
 
 
@@ -24,6 +27,9 @@ Features:
 ![review-animes-demo](https://user-images.githubusercontent.com/71291742/145110286-8dd4c706-1fa1-42a9-855c-1f59b7665dff.gif)
 
 Stretch features:
+
 -Users can create a profile
+
 -Users can edit reviewed animes and favorited animes
+
 -Users can delete reviewed animes and favorited animes
