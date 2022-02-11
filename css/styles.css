@@ -211,7 +211,7 @@ footer div {
 footer {
   display: flex;
   justify-content: space-between;
-  background-color: white;
+  background-color: rgb(255, 136, 0);
 }
 
 footer h6 {
